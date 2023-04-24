@@ -3,29 +3,44 @@ import 'react-native-gesture-handler';
 // Navigation Container
 import { Navigation } from './src/Infrastructure/Navigation';
 
+// Theme provider
+import { ThemeProvider } from 'styled-components/native';
+// The theme
+import { theme } from './src/Infrastructure/Themes';
+
 // The main Font
 import {
   useFonts,
-  Merienda_700Regular
-} from "@expo-google-fonts/merienda";
+  Inter_900Black,
+} from '@expo-google-fonts/inter';
+
+import { useFonts as useLobster, Lobster_400Regular } from '@expo-google-fonts/lobster'; // Lobster font
+
+// Load bar 
 
 import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
 
-  const [meriendaLoaded] = useFonts({
-    Merienda_700Regular,
-  })
+  const [fontsLoaded] = useFonts({
+    Inter_900Black,
+  });
 
-  if(!meriendaLoaded){
-    return null;
+  const [lobsterLoaded] = useLobster({
+    Lobster_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return <Text>Not Availiable</Text>
   }
 
   return (
     <>
-      <Navigation />
-      <StatusBar style="auto" />
+      <ThemeProvider theme={theme}>
+        <Navigation />
+        <StatusBar style="auto" />
+      </ThemeProvider>
     </>
   );
 }

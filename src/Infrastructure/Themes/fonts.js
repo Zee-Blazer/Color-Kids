@@ -1,5 +1,6 @@
 export const fonts = {
-    headers: "Merienda_700Regular",
+    headers: "Inter_900Black",
+    titleHead: "Lobster_400Regular",
     body: "Merienda_700Regular"
 };
 
