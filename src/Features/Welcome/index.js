@@ -16,25 +16,25 @@ export const WelcomeGame = ({ navigation }) => (
             <MainHeader>Color Kids Game</MainHeader>
             <Spacer />
 
-            <TouchableOpacity onPress={ () => navigation.navigate("Levels") }>
-                <HomeBtn onPress={ () => navigation.push("Levels") }>
+            <TouchableOpacity onPress={() => navigation.navigate("Levels")}>
+                <HomeBtn onPress={() => navigation.push("Levels")}>
                     <InnerBtn>Color Fit</InnerBtn>
                 </HomeBtn>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={ () => navigation.navigate("Levels") }>
-                <HomeBtn onPress={ () => console.log("Working") }>
+            <TouchableOpacity onPress={() => navigation.navigate("Levels")}>
+                <HomeBtn onPress={() => console.log("Working")}>
                     <InnerBtn>Shape Fit</InnerBtn>
                 </HomeBtn>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={ () => navigation.navigate("Levels") }>
+            <TouchableOpacity onPress={() => navigation.navigate("Levels")}>
                 <HomeBtn>
                     <InnerBtn>Both Fit</InnerBtn>
                 </HomeBtn>
             </TouchableOpacity>
 
-            
+
         </MainBackground>
     </SafeAir>
 )

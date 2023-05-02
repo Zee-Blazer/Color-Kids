@@ -5,10 +5,10 @@ export const MainHeader = styled.Text`
     font-size: ${ props => props.theme.sizes[5] };
     text-align: center;
     margin-top: 75px;
-    margin-bottom: 152px;
+    margin-bottom: 142px;
     color: ${ props => props.theme.colors.text.primary };
 `;
 
 export const Spacer = styled.View`
-    margin: 36px 0px;
+    margin: 46px 0px;
 `;

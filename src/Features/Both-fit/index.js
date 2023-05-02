@@ -1,13 +1,12 @@
 
 // Safe Area
-import { SafeAir } from "../../Utils/SafeArea"
+import { SafeAir } from "../../Utils/SafeArea";
 
-import { Text } from 'react-native';
+// Other components
+import { AttemptComponent } from "./Components/attempt.component";
 
 export const BothFitScreen = () => (
     <SafeAir>
-        <Text>
-            Both-Fit Screen
-        </Text>
+        <AttemptComponent />
     </SafeAir>
 )
