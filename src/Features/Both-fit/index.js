@@ -18,7 +18,7 @@ export const BothFitScreen = () => (
     <SafeAir>
 
         {/* Faded Background  */}
-        <BackgroundMessage />
+        {/* <BackgroundMessage /> */}
 
         <AttemptComponent />
         <ShapePick />
