@@ -7,11 +7,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
-import { WelcomeGame } from '../../Features/Welcome'; // Welcome Screen
-import { BothFitScreen } from '../../Features/Both-fit'; // Both-Fit Screen
-import { ColorFitScren } from '../../Features/Color-fit'; // Color-Fit Screen
-import { LevelScreen } from '../../Features/Levels'; // Level Screen
-import { ShapeFitScreen } from '../../Features/Shape-fit'; // Shape-Fit Screen
+import { WelcomeGame } from '../../Features/Welcome'; // Welcome Screen;
+import { BothFitScreen } from '../../Features/Both-fit'; // Both-Fit Screen;
+import { LevelScreen } from '../../Features/Levels'; // Level Screen;
+import { ShapeFitScreen } from '../../Features/Shape-fit'; // Shape-Fit Screen;
+import { ColorFitScreen } from '../../Features/Color-fit';
 
 const GameStack = createStackNavigator();
 
@@ -41,6 +41,11 @@ export const Navigation = () => {
                 <GameStack.Screen
                     name="ShapeFit"
                     component={ ShapeFitScreen }
+                />
+
+                <GameStack.Screen 
+                    name="ColorFit"
+                    component={ ColorFitScreen }
                 />
 
                 {/* <GameStack.Screen
