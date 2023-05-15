@@ -25,11 +25,11 @@ export const LevelScreen = ({ navigation, route }) => {
             <MainHeader>{ header }</MainHeader>
     
             <ContainerBtn>
-                <RoundedBtn num={1} movement={navigation.navigate} screenName={ screenName } />
-                <RoundedBtn num={2} movement={navigation.navigate} screenName={ screenName } />
-                <RoundedBtn num={3} movement={navigation.navigate} screenName={ screenName } />
-                <RoundedBtn num={4} movement={navigation.navigate} screenName={ screenName } />
-                <RoundedBtn num={5} movement={navigation.navigate} screenName={ screenName } />
+                <RoundedBtn num={1} movement={navigation.navigate} screenName={ screenName } lock={false} />
+                <RoundedBtn num={2} movement={navigation.navigate} screenName={ screenName } lock={true} />
+                <RoundedBtn num={3} movement={navigation.navigate} screenName={ screenName } lock={true} />
+                <RoundedBtn num={4} movement={navigation.navigate} screenName={ screenName } lock={true} />
+                <RoundedBtn num={5} movement={navigation.navigate} screenName={ screenName } lock={true} />
             </ContainerBtn>
     
             <ProgressCont>

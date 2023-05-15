@@ -1,9 +1,13 @@
+import React, { useContext } from 'react';
 
 // Safe Area
 import { SafeAir } from "../../Utils/SafeArea";
 
 // Custom styled components
 import { GoBtn, GoBtnText } from "./Components/custom.both-fit.style";
+
+// Context management component
+import { BothFitContext } from '../../Services/Both-fit/both-fit.context';
 
 // React Native components
 import { Text } from "react-native-paper";
@@ -14,20 +18,27 @@ import { ShapePick } from "././Components/shape-pick.component";
 import { ColorPick } from "./Components/color-pick.component";
 import { BackgroundMessage } from "./Components/background-message.component";
 
-export const BothFitScreen = () => (
-    <SafeAir>
+export const BothFitScreen = () => {
 
-        {/* Faded Background  */}
-        {/* <BackgroundMessage /> */}
+    const { main } = useContext( BothFitContext );
 
-        <AttemptComponent />
-        <ShapePick />
-        <ColorPick />
+    console.log(main);
 
-        {/* Submit Button  */}
-        <GoBtn>
-            <GoBtnText>GO</GoBtnText>
-        </GoBtn>
-
-    </SafeAir>
-)
+    return (
+        <SafeAir>
+    
+            {/* Faded Background  */}
+            {/* <BackgroundMessage /> */}
+    
+            <AttemptComponent />
+            <ShapePick />
+            <ColorPick />
+    
+            {/* Submit Button  */}
+            <GoBtn>
+                <GoBtnText>GO</GoBtnText>
+            </GoBtn>
+    
+        </SafeAir>
+    )
+}

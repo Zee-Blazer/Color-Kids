@@ -11,49 +11,51 @@ import { WelcomeGame } from '../../Features/Welcome'; // Welcome Screen;
 import { BothFitScreen } from '../../Features/Both-fit'; // Both-Fit Screen;
 import { LevelScreen } from '../../Features/Levels'; // Level Screen;
 import { ShapeFitScreen } from '../../Features/Shape-fit'; // Shape-Fit Screen;
-import { ColorFitScreen } from '../../Features/Color-fit';
+import { ColorFitScreen } from '../../Features/Color-fit'; // Color-Fit screen;
+
+// Use Context Components
+import { BothFitContextProvider } from '../../Services/Both-fit/both-fit.context';
 
 const GameStack = createStackNavigator();
 
 export const Navigation = () => {
 
     return (
-        <NavigationContainer>
-            <GameStack.Navigator screenOptions={{
-                headerShown: false
-            }}>
+        <BothFitContextProvider>
 
-                <GameStack.Screen
-                    name="Welcome"
-                    component={ WelcomeGame }
-                />
+            <NavigationContainer>
+                <GameStack.Navigator screenOptions={{
+                    headerShown: false
+                }}>
 
-                <GameStack.Screen
-                    name="Levels"
-                    component={ LevelScreen }
-                />
+                    <GameStack.Screen
+                        name="Welcome"
+                        component={ WelcomeGame }
+                    />
 
-                <GameStack.Screen
-                    name="BothFit"
-                    component={ BothFitScreen }
-                />
+                    <GameStack.Screen
+                        name="Levels"
+                        component={ LevelScreen }
+                    />
 
-                <GameStack.Screen
-                    name="ShapeFit"
-                    component={ ShapeFitScreen }
-                />
+                    <GameStack.Screen
+                        name="BothFit"
+                        component={ BothFitScreen }
+                    />
 
-                <GameStack.Screen 
-                    name="ColorFit"
-                    component={ ColorFitScreen }
-                />
+                    <GameStack.Screen
+                        name="ShapeFit"
+                        component={ ShapeFitScreen }
+                    />
 
-                {/* <GameStack.Screen
-                    name="ColorFit"
-                    component={ ColorFitScren }
-                /> */}
+                    <GameStack.Screen 
+                        name="ColorFit"
+                        component={ ColorFitScreen }
+                    />
 
-            </GameStack.Navigator>
-        </NavigationContainer>
+                </GameStack.Navigator>
+            </NavigationContainer>
+
+        </BothFitContextProvider>
     )
 }

@@ -18,6 +18,12 @@ export const Traingle = styled.View`
     margin: ${ props => props.src === "small" ? "0px 12px" : "0px" }
 `;
 
+export const TriangleDownShape = styled.View`
+    width: 0;
+    height: 0;
+    
+`;
+
 export const Square = styled.View`
     width: ${ props => props.src === "small" ? "40px" : "100px" };
     height: ${ props => props.src === "small" ? "40px" : "100px" };

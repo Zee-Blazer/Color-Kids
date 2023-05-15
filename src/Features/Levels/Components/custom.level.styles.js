@@ -20,6 +20,15 @@ export const Rounded = styled.View`
     font-family: ${ props => props.theme.fonts.titleHead };
 `;
 
+export const LockedLevel = styled.View`
+    postion: relative;
+    padding: 18px 28px;
+    background-color: rgba(1, 1, 1, 0.54);
+    height: 100%;
+    width: 100%;
+    border-radius: 50;
+`;
+
 export const RoundedText = styled.Text`
     font-size: ${ props => props.theme.fontSize.circleBtn };
     color: ${ props => props.theme.colors.text.secondary };
