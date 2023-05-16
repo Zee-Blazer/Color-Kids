@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 
 // Safe Area
 import { SafeAir } from "../../Utils/SafeArea";
@@ -11,13 +12,24 @@ import { ContainerBtn, ProgressLabel, ProgressCont, ProgressStage } from "./Comp
 // Components
 import { RoundedBtn } from "./Components/rounded-btn.levels.component";
 
+// Context
+import { BothFitContext } from "../../Services/Both-fit/both-fit.context";
+
+// Tryout
+import { CurrentLevel } from "./Components/current.type.level.component";
+
 
 export const LevelScreen = ({ navigation, route }) => {
 
     const screenName = route.params.screen;
     const header = route.params.header;
 
-    console.log(header);
+    // Context 
+    const { currentLevel } = useContext( BothFitContext );
+
+    console.log(`${header} - working properly ${currentLevel}`);
+
+    console.log(CurrentLevel(header) >= 4 );
 
     return (
         <SafeAir>
@@ -25,11 +37,11 @@ export const LevelScreen = ({ navigation, route }) => {
             <MainHeader>{ header }</MainHeader>
     
             <ContainerBtn>
-                <RoundedBtn num={1} movement={navigation.navigate} screenName={ screenName } lock={false} />
-                <RoundedBtn num={2} movement={navigation.navigate} screenName={ screenName } lock={true} />
-                <RoundedBtn num={3} movement={navigation.navigate} screenName={ screenName } lock={true} />
-                <RoundedBtn num={4} movement={navigation.navigate} screenName={ screenName } lock={true} />
-                <RoundedBtn num={5} movement={navigation.navigate} screenName={ screenName } lock={true} />
+                <RoundedBtn num={1} movement={navigation.navigate} screenName={ screenName } lock={ CurrentLevel(header) >= 1 } />
+                <RoundedBtn num={2} movement={navigation.navigate} screenName={ screenName } lock={ CurrentLevel(header) >= 2 } />
+                <RoundedBtn num={3} movement={navigation.navigate} screenName={ screenName } lock={ CurrentLevel(header) >= 3 } />
+                <RoundedBtn num={4} movement={navigation.navigate} screenName={ screenName } lock={ CurrentLevel(header) >= 4 } />
+                <RoundedBtn num={5} movement={navigation.navigate} screenName={ screenName } lock={ CurrentLevel(header) >= 5 } />
             </ContainerBtn>
     
             <ProgressCont>

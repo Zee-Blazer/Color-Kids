@@ -7,7 +7,8 @@ export const BothFitContextProvider = ({ children }) => {
     return (
         <BothFitContext.Provider
             value={{
-                main: 'Data is flowing'
+                main: 'Data is flowing',
+                currentLevel: 1
             }}
         >
             { children }

@@ -11,14 +11,14 @@ import { Rounded, RoundedText, LockedLevel } from "./custom.level.styles"
 export const RoundedBtn = ({ num, movement, screenName, lock }) => {
 
     return (
-        <TouchableOpacity onPress={ () => movement(screenName, { level: num }) }>
+        <TouchableOpacity onPress={ () => lock ? movement(screenName, { level: num }) : null }>
             <Rounded>
                 
                 {/* <LockedLevel>
                     <Entypo name="lock" size={24} color="white" />
                 </LockedLevel> */}
 
-                { lock && <Entypo name="lock" size={24} color="white" style={{ 
+                { !lock && <Entypo name="lock" size={24} color="white" style={{ 
                         position: 'absolute', marginTop: 32, marginLeft: 36 
                     }} 
                 /> }

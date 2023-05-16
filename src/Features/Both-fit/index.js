@@ -18,11 +18,13 @@ import { ShapePick } from "././Components/shape-pick.component";
 import { ColorPick } from "./Components/color-pick.component";
 import { BackgroundMessage } from "./Components/background-message.component";
 
-export const BothFitScreen = () => {
+export const BothFitScreen = ({ navigation, route }) => {
 
-    const { main } = useContext( BothFitContext );
+    console.log(route.params.level);
 
-    console.log(main);
+    const { main, currentLevel } = useContext( BothFitContext );
+
+    console.log(main, currentLevel);
 
     return (
         <SafeAir>
