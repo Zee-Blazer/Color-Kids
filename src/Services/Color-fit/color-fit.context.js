@@ -10,7 +10,7 @@ export const ColorFitContextProvider = ({ children }) => {
     // useState functionalities
     const [level, setLevel] = useState(1);
 
-    const nextLevel = (l) => {
+    const colorNextLevel = (l) => {
         if (l == level) {
             setLevel(level + 1);
         }
@@ -22,7 +22,7 @@ export const ColorFitContextProvider = ({ children }) => {
                 main: 'Data is flowing',
                 colorLevel: level,
                 levelData,
-                nextLevel
+                colorNextLevel
             }}
         >
             {children}

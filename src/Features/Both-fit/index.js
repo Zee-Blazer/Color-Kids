@@ -24,7 +24,7 @@ import { BackgroundMessage } from "./Components/background-message.component";
 export const BothFitScreen = ({ navigation, route }) => {
 
     // Navigation calls
-    const level = route.params.level;
+    const level = route.params.level; 
 
     // usState calls
     const [question, setQuestion] = useState();
@@ -92,6 +92,7 @@ export const BothFitScreen = ({ navigation, route }) => {
                     restartGame={ restartGame } 
                     level={ level } 
                     movement={ navigation.navigate }
+                    screen="BothFit"
                 /> 
             }
     

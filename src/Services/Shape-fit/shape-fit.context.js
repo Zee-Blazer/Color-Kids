@@ -10,7 +10,7 @@ export const ShapeFitContextProvider = ({ children }) => {
     // useState functionalities
     const [level, setLevel] = useState(1);
 
-    const nextLevel = (l) => {
+    const shapeNextLevel = (l) => {
         if (l == level) {
             setLevel(level + 1);
         }
@@ -22,7 +22,7 @@ export const ShapeFitContextProvider = ({ children }) => {
                 main: 'Data is flowing',
                 shapeLevel: level,
                 levelData,
-                nextLevel
+                shapeNextLevel
             }}
         >
             {children}

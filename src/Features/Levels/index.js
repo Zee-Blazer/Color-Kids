@@ -27,18 +27,6 @@ export const LevelScreen = ({ navigation, route }) => {
     const screenName = route.params.screen;
     const header = route.params.header;
 
-    // Use state context
-    // const [progress, setProgress] = useState();
-
-    // // Context 
-    // const { currentLevel, levelData } = useContext( BothFitContext );
-
-    // useEffect( () => {
-    //     setProgress( (10 * ((currentLevel-1) * 2)) /100 );
-    // }, [currentLevel] )    
-
-    // console.log(screenName)
-
     return (
         <SafeAir>
     
