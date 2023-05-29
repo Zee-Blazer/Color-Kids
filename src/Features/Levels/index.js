@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 // Safe Area
 import { SafeAir } from "../../Utils/SafeArea";
@@ -18,36 +18,33 @@ import { BothFitContext } from "../../Services/Both-fit/both-fit.context";
 // Tryout
 import { CurrentLevel } from "./Components/current.type.level.component";
 
+// Main container button
+import { ContainerButton } from "./Components/container-button.component";
+
 
 export const LevelScreen = ({ navigation, route }) => {
 
     const screenName = route.params.screen;
     const header = route.params.header;
 
-    // Context 
-    const { currentLevel } = useContext( BothFitContext );
+    // Use state context
+    // const [progress, setProgress] = useState();
 
-    console.log(`${header} - working properly ${currentLevel}`);
+    // // Context 
+    // const { currentLevel, levelData } = useContext( BothFitContext );
 
-    console.log(CurrentLevel(header) >= 4 );
+    // useEffect( () => {
+    //     setProgress( (10 * ((currentLevel-1) * 2)) /100 );
+    // }, [currentLevel] )    
+
+    // console.log(screenName)
 
     return (
         <SafeAir>
     
             <MainHeader>{ header }</MainHeader>
-    
-            <ContainerBtn>
-                <RoundedBtn num={1} movement={navigation.navigate} screenName={ screenName } lock={ CurrentLevel(header) >= 1 } />
-                <RoundedBtn num={2} movement={navigation.navigate} screenName={ screenName } lock={ CurrentLevel(header) >= 2 } />
-                <RoundedBtn num={3} movement={navigation.navigate} screenName={ screenName } lock={ CurrentLevel(header) >= 3 } />
-                <RoundedBtn num={4} movement={navigation.navigate} screenName={ screenName } lock={ CurrentLevel(header) >= 4 } />
-                <RoundedBtn num={5} movement={navigation.navigate} screenName={ screenName } lock={ CurrentLevel(header) >= 5 } />
-            </ContainerBtn>
-    
-            <ProgressCont>
-                <ProgressLabel>Progress: </ProgressLabel>
-                <ProgressStage progress={0.4} color="#172B2D" />
-            </ProgressCont>
+
+            <ContainerButton screen={ screenName } header={ header } movement={ navigation.navigate } />
     
         </SafeAir>
     )

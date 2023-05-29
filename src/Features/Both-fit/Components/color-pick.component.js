@@ -1,24 +1,49 @@
+import React, { useState, useEffect } from 'react';
 
 // Styled components from Both-fit custom style
-import { TitleHeader, ItemContainer } from "./custom.both-fit.style";
+import { TitleHeader, ItemContainer, StyledCenterCont, StyledFlatList } from "./custom.both-fit.style";
 
 // Shapes imported
 import { Circle } from "../../../Components/Shape-styling/all-shapes.style";
 
-export const ColorPick = () => (
-    <>
-        <TitleHeader>Color</TitleHeader>
+// Total color items
+import { colors } from "../../../Services/game-list.service";
 
-        <ItemContainer
-            contentContainerStyle={{ justifyContent: "space-between", }}
-            horizontal
-        >
-            <Circle src="small" color="red" />
-            <Circle src="small" color="blue" />
-            <Circle src="small" color="purple" />
-            <Circle src="small" color="pink" />
-            <Circle src="small" color="yellow" />
-            <Circle src="small" />
-        </ItemContainer>
-    </>
-)
+// Specific Color component
+import { SpecificColor } from './Colors/specific-color.component';
+
+// The General function that helps create the array for the state color
+import { generalFunction } from '../../../Services/genera_func.component';
+
+
+export const ColorPick = ({ numColor, colorer }) => {
+
+    const [col, setCol] = useState([]);
+
+    useEffect( () => {
+        setCol(generalFunction(numColor, colors));
+    }, [] )
+
+    const getValue = (e) => colorer(e)
+
+    return (
+        <>
+            <TitleHeader>Color</TitleHeader>
+
+            <StyledCenterCont>
+                <StyledFlatList 
+                    horizontal
+                    data={col}
+                    renderItem={ ({item}) => {
+
+                        return (
+                            <SpecificColor type={item} getValue={ getValue } />
+                        )
+                    } }
+                    keyExtractor={ item => item }
+                />
+            </StyledCenterCont>
+
+        </>
+    )
+}

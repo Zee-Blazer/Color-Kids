@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components/native';
 // The theme
 import { theme } from './src/Infrastructure/Themes';
 
-// The main Font
+// // The main Font
 import {
   useFonts,
   Inter_900Black,
@@ -16,12 +16,14 @@ import {
 
 import { useFonts as useLobster, Lobster_400Regular } from '@expo-google-fonts/lobster'; // Lobster font
 
+
 // Load bar 
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+
 
   const [fontsLoaded] = useFonts({
     Inter_900Black,
@@ -31,8 +33,9 @@ export default function App() {
     Lobster_400Regular,
   });
 
-  if (!fontsLoaded) {
-    return <Text>Not Availiable</Text>
+
+  if(!fontsLoaded || !lobsterLoaded){
+    return <Text>Hello my guy</Text>
   }
 
   return (

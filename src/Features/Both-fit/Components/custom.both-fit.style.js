@@ -10,15 +10,16 @@ export const AnswerContainer = styled.View`
     border-bottom-right-radius: 178px; 
     overflow: hidden;
     margin: 2px 0px;
-    border-color: ${ props => props.theme.colors.bg.secondary };
+    border-color: ${props => props.theme.colors.bg.secondary};
 `;
 
 export const AttemptCount = styled.Text`
     font-size: 24px;
-    font-family: ${ props => props.theme.fonts.titleHead };
     margin-left: 82%;
-    margin-top: ${ props => props.theme.space[3] };
+    margin-top: ${props => props.theme.space[3]};
+    font-family: ${props => props.theme.fonts.titleHead};
 `;
+
 
 export const MiddleShape = styled.View`
     align-self: center;
@@ -28,15 +29,15 @@ export const MiddleShape = styled.View`
 export const AnswerText = styled.Text`
     font-size: 24px;
     text-align: center;
-    font-family: ${ props => props.theme.fonts.titleHead };
+    font-family: ${props => props.theme.fonts.titleHead};
     margin-top: 21px;
 `;
 
 export const TitleHeader = styled.Text`
     font-size: 27px;
-    font-family: ${ props => props.theme.fonts.titleHead };
     text-align: center;
     margin-top: 42px;
+    font-family: ${props => props.theme.fonts.titleHead};
 `;
 
 export const ItemContainer = styled.ScrollView`
@@ -44,8 +45,18 @@ export const ItemContainer = styled.ScrollView`
     margin-top: 32px;
 `;
 
+export const StyledCenterCont = styled.View`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const StyledFlatList = styled.FlatList`
+    margin: 7px 8px;
+`;
+
 export const GoBtn = styled.TouchableOpacity`
-    background-color: ${ props => props.theme.colors.bg.secondary };
+    background-color: ${props => props.theme.colors.bg.secondary};
     padding: 7px;
     margin: 12px;
     margin-top: 18px;
@@ -75,7 +86,7 @@ export const FadedBackgroundMessage = styled.View`
 export const FadeMainContainer = styled.View`
     width: 324px;
     height: 384px;
-    background-color: ${ props => props.theme.colors.bg.primary };
+    background-color: ${props => props.theme.colors.bg.primary};
     margin: 36% 36px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -90,7 +101,7 @@ export const MissionResult = styled.View`
     left: 104;
     height: 69px;
     border-top-left-radius: 16px;
-    background-color: ${ props => props.theme.colors.bg.primary };
+    background-color: ${props => props.theme.colors.bg.primary};
     border-top-right-radius: 16px;
     z-index: 3;
     padding-top: 19px;
@@ -98,20 +109,21 @@ export const MissionResult = styled.View`
 
 export const MissionResultText = styled.Text`
     font-size: 21px;
-    font-family: ${ props => props.theme.fonts.titleHead };
     text-align: center;
-    color: ${ props => props.msg === "err" ? props.theme.colors.text.failed : props.theme.colors.text.success };
+    color: ${props => props.msg === "err" ? props.theme.colors.text.failed : props.theme.colors.text.success};
+    font-family: ${props => props.theme.fonts.titleHead};
 `;
+
 
 export const DisplayContTitleMsg = styled.Text`
     font-size: 32px;
-    font-family: ${ props => props.theme.fonts.titleHead };
     text-align: center;
-    color: ${ props => props.msg === "err" ? props.theme.colors.text.failed : props.theme.colors.text.success };
+    color: ${props => props.msg === "err" ? props.theme.colors.text.failed : props.theme.colors.text.success};
+    font-family: ${props => props.theme.fonts.titleHead};
 `;
 
 export const IconDisplayCont = styled.View`
-    background-color: ${ props => props.theme.colors.bg.secondary };
+    background-color: ${props => props.theme.colors.bg.secondary};
     border-radius: 50;
     width: 65px;
     height: 65px;

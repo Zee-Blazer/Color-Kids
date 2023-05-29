@@ -1,6 +1,6 @@
 
-export const shapes = [ SemiCircle, Circle, Square, Triangle, Rectangle ];
+export const shapes = [ "Semicircle", "Circle", "Square", "Triangle", "Rectangle" ];
 
-export const Colors = [ 
+export const colors = [ 
     "red", "blue", "green", "yellow", "orange", "purple", "pink", 'black', 'white', "gray", 'brown', "teal" 
 ];

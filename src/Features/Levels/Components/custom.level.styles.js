@@ -20,6 +20,7 @@ export const Rounded = styled.View`
     font-family: ${ props => props.theme.fonts.titleHead };
 `;
 
+
 export const LockedLevel = styled.View`
     postion: relative;
     padding: 18px 28px;
@@ -43,11 +44,12 @@ export const ProgressCont = styled.View`
 `;
 
 export const ProgressLabel = styled.Text`
-    font-family: ${ props => props.theme.fonts.titleHead };
     text-align: center;
     font-size: 18px;
     margin-right: 4px;
+    font-family: ${ props => props.theme.fonts.titleHead };
 `;
+
 
 export const ProgressStage = styled(ProgressBar)`
     width: 200px;

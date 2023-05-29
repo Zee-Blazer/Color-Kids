@@ -1,7 +1,14 @@
+import React, { useContext } from 'react';
+
+// React native component
+import { TouchableOpacity } from 'react-native';
 
 // Expo icons
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+
+// Both fit Context 
+import { BothFitContext } from '../../../Services/Both-fit/both-fit.context';
 
 // Custom components imported
 import { 
@@ -18,26 +25,44 @@ import {
 // Spacer component
 import { Spacer } from '../../../Components/General-styling/header.styles';
 
-export const BackgroundMessage = () => (
-    <FadedBackgroundMessage>
+export const BackgroundMessage = ({ level, status, movement, restartGame }) => {
 
-        <MissionResult>
-            <MissionResultText msg="err" >Mission Success</MissionResultText>
-        </MissionResult>
+    // Both fit context 
+    const { nextLevel } = useContext( BothFitContext );
 
-        <FadeMainContainer>
-            <DisplayContTitleMsg msg="err" >Retry</DisplayContTitleMsg>
-            
-            <IconDisplayCont>
-                <FontAwesome name="repeat" size={50} color="#AEE8C2" style={{ alignSelf: "center", marginTop: 6 }} />
-                {/* <AntDesign name="stepforward" size={50} color="#AEE8C2" style={{ alignSelf: "center", marginTop: 6 }} /> */}
-            </IconDisplayCont>
+    const successMove = () => {
+        nextLevel(level);
+        movement('Levels', { header: "Both", screen: "BothFit" });
+    }
 
-            <Spacer />
-            <GoBtn>
-                <GoBtnText>Main Menu</GoBtnText>
-            </GoBtn>
-        </FadeMainContainer>
-
-    </FadedBackgroundMessage>
-)
+    return (
+        <FadedBackgroundMessage>
+    
+            <MissionResult>
+                <MissionResultText msg={ status == "success" ? "" : "err" } >Mission { status == "success" ? "Success" : "Failed" }</MissionResultText>
+            </MissionResult>
+    
+            <FadeMainContainer>
+                <DisplayContTitleMsg msg={ status == "success" ? "" : "err" } >{ status == "success" ? "Completed" : "Retry" }</DisplayContTitleMsg>
+                
+                <IconDisplayCont>
+                    {
+                        status == "success" ? 
+                        <TouchableOpacity onPress={ successMove }>
+                            <AntDesign name="stepforward" size={50} color="#AEE8C2" style={{ alignSelf: "center", marginTop: 6 }} />
+                        </TouchableOpacity> :
+                        <TouchableOpacity onPress={ restartGame } >
+                            <FontAwesome name="repeat" size={50} color="#AEE8C2" style={{ alignSelf: "center", marginTop: 6 }} />
+                        </TouchableOpacity>
+                    }
+                </IconDisplayCont>
+    
+                <Spacer />
+                <GoBtn onPress={ () => movement('Welcome') }>
+                    <GoBtnText>Main Menu</GoBtnText>
+                </GoBtn>
+            </FadeMainContainer>
+    
+        </FadedBackgroundMessage>
+    )
+}

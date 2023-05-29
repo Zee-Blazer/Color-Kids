@@ -4,14 +4,23 @@ import { AnswerContainer, AttemptCount, AnswerText, MiddleShape } from "./custom
 // Shapes import 
 import { Semicircle, Square, Rectangle } from "../../../Components/Shape-styling/all-shapes.style";
 
-export const AttemptComponent = () => (
+// icon importation
+import { FontAwesome } from '@expo/vector-icons';
+
+// Specific shape for the game
+import { SpecificShape } from "./specific-shape.component";
+
+export const AttemptComponent = ({ question, color, shape, attempt }) => (
     <AnswerContainer>
-        <AttemptCount>0/3</AttemptCount>
+        <AttemptCount>{attempt}/2</AttemptCount>
         
         <MiddleShape>
-            <Semicircle />
+            {
+                shape ? <SpecificShape type={ shape } color={ color } />
+                : <FontAwesome name="question" size={100} color="black" />
+            }
         </MiddleShape>
 
-        <AnswerText>Traingle</AnswerText>
+        { question && <AnswerText>{ question[0] } & { question[1] }</AnswerText> }
     </AnswerContainer>
 )
